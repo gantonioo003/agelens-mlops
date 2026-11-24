@@ -1,0 +1,50 @@
+[
+  {
+    "number": 1,
+    "title": "Distribuicao de idade",
+    "filename": "01_idades_treino.png",
+    "interpretation": "O treino tem 9001 imagens, idade media 33.13, mediana 29 e intervalo 1 a 100 anos. Menores de 18 somam 1620 (18.0%). A distribuicao nao e uniforme; MAE global pode ocultar erros nas idades jovens. Idades extremas validas foram mantidas dentro do recorte, sem remocao por serem raras."
+  },
+  {
+    "number": 2,
+    "title": "Balanceamento por limiar",
+    "filename": "02_balanceamento_tarefas.png",
+    "interpretation": "Proporcoes positivas no treino: <12: 14.0%, <13: 14.6%, <15: 15.6%, <16: 16.3%, <18: 18.0%, <21: 20.8%. A classe positiva muda com T; as seis tarefas nao sao independentes. A amostragem por idade do protocolo sera aplicada apenas no treino. Validacao e teste nao recebem sobreamostragem nem pesos de treino."
+  },
+  {
+    "number": 3,
+    "title": "Representacao demografica anotada",
+    "filename": "03_demografia_treino.png",
+    "interpretation": "A categoria 0 tem 3859 registros e a categoria 4 tem 649. Os codigos descrevem os rotulos binarios/de categorias do dataset, nao identidade de genero ou etnia verificada. Nao entram como atributos preditores. O desbalanceamento exige cautela ao generalizar; esta figura nao mede equidade do modelo, pois nenhum modelo foi treinado."
+  },
+  {
+    "number": 4,
+    "title": "Variacao de qualidade visual",
+    "filename": "04_qualidade_treino.png",
+    "interpretation": "Medianas de brilho 124.9, contraste 49.5 e variancia Laplaciana 651.8. As medidas usam o mesmo tamanho 64 x 64, para comparar imagens em condicoes consistentes. Elas nao provam qualidade facial ou idade correta. Imagens escuras, claras ou pouco nitidas nao foram excluidas por limiar arbitrario, evitando facilitar artificialmente o problema."
+  },
+  {
+    "number": 5,
+    "title": "Formato e resolucao",
+    "filename": "05_resolucao_treino.png",
+    "interpretation": "Foram observadas 1 resolucoes no treino e modos originais {'RGB': 9001}. A conversao RGB e a orientacao EXIF sao deterministicas. O FaRL ainda exigira seu preprocessamento oficial 224 x 224; aumentar uma imagem pequena nao recupera detalhes perdidos."
+  },
+  {
+    "number": 6,
+    "title": "Fluxo de exclusao e amostragem",
+    "filename": "06_auditoria_destinos.png",
+    "interpretation": "Todos os 23708 arquivos foram auditados; 23708 decodificaram. Foram excluidos 5 nomes inconsistentes, 18 idades fora do recorte, 118 copias exatas redundantes e 531 imagens de grupos exatos com rotulos conflitantes. Outros 8036 registros elegiveis ficaram fora somente pelo teto de custo, nao por erro de modelo. As exclusoes conservadoras podem alterar a distribuicao e devem constar como limitacao da reproducao reduzida."
+  },
+  {
+    "number": 7,
+    "title": "Suporte e precisao do alvo de recall",
+    "filename": "07_suporte_splits.png",
+    "interpretation": "O menor suporte positivo e 211 na calibracao e 420 no teste. Um unico falso adulto muda a FNR em 1/n; recall de 0,99 nao pode ser tratado como garantia. A tabela usa somente contagens de suporte previstas para auditar a particao, nao escolhas de modelo pelo teste. Dependencia por pessoa pode reduzir o tamanho efetivo da amostra; a separacao por identidade nao foi comprovada."
+  },
+  {
+    "number": 8,
+    "title": "Validacao cruzada sem romper grupos",
+    "filename": "08_folds_treino.png",
+    "interpretation": "Tamanhos dos folds internos: {0: 3001, 1: 3000, 2: 3000}. Todos sao subconjuntos exclusivos do treino e grupos de duplicatas nao cruzam folds. Pequenas diferencas entre as proporcoes sao esperadas ao preservar grupos inteiros. Normalizacao, amostragem e tuning futuros deverao ser ajustados dentro de cada fold, sem usar seus exemplos de avaliacao."
+  }
+]

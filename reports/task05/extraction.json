@@ -1,0 +1,69 @@
+{
+  "task": "05",
+  "cache_id": "d7ace2ec615fb9275113baae10414c1d",
+  "fingerprint": "d7ace2ec615fb9275113baae10414c1d66ad71793b7e116c8e8c1259fd329b72",
+  "samples": 15000,
+  "split_sizes": {
+    "train": 9001,
+    "test": 3000,
+    "val_select": 1500,
+    "val_calibration": 1499
+  },
+  "extraction_runtime": {
+    "python": "3.12.14",
+    "os": "Windows",
+    "machine": "AMD64",
+    "device": "cuda",
+    "cuda_version": "12.8",
+    "gpu_name": "NVIDIA GeForce RTX 5050 Laptop GPU",
+    "gpu_capability": [
+      12,
+      0
+    ],
+    "deterministic_algorithms": true,
+    "tf32_matmul": false,
+    "tf32_cudnn": false
+  },
+  "library_versions": {
+    "torch": "2.8.0+cu128",
+    "torchvision": "0.23.0+cu128",
+    "clip": "1.0",
+    "numpy": "2.5.5",
+    "Pillow": "13.0.0",
+    "pandas": "3.1.1"
+  },
+  "feature_statistics": {
+    "shape": [
+      15000,
+      512
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "min_row_norm": 0.9999998211860657,
+    "max_row_norm": 1.0000001192092896,
+    "min_column_std": 0.010070926156589288
+  },
+  "encoder_state_unchanged": true,
+  "checkpoint_precision_preserved": true,
+  "eval_mode": true,
+  "all_parameters_frozen": true,
+  "gradients_absent": true,
+  "no_fitted_transforms": true,
+  "metadata_sha256": "3807871558919e5f0824776bdde9a907176980626c68c47348dab805f5c9e73c",
+  "file_sha256": {
+    "features.npy": "38b9175a6fa17cbaed030fb42724a53c9e43a010db7e85e4092d3e1bd61959f7",
+    "indices_cv_0.npy": "2e12b391c661024c1aa304b72663713df5eee226801e0e8ac7a2a7a23835e45d",
+    "indices_cv_1.npy": "9c7f09135bd4e9f991fe293cc8b3eaf30d2f4b7fb644ff24e137fb6a632f4c8a",
+    "indices_cv_2.npy": "a4b1835e9d0b65a5a83a992684ae8c8c00bbd3bded013b33a50a2fbe121851b2",
+    "indices_test.npy": "0b67e614c95bc51664527072a5828dfc28827352510bab12d9f4bcbb729e0be0",
+    "indices_train.npy": "277e2307a0bffd54e0cea1bf49b05283dcff10cd71266275cc9c979d7bbfc43b",
+    "indices_val_calibration.npy": "0a5d168e5297564efc29330e8b8c399883e976b6ecffc8549225fd8dcc9acb6e",
+    "indices_val_select.npy": "f87deff3bc3cb8e6faf63d474c7ac2e60fc4ce48144b0e248bc63edcb36a5a98",
+    "rows.csv": "25e32f653e5e0f8d3a4790bdbfe38f1392f548fca3efd79ad29371feac6508d6"
+  },
+  "elapsed_seconds": 197.6933514000002,
+  "trained": false,
+  "features_private": true,
+  "commit_created": false,
+  "push_executed": false
+}

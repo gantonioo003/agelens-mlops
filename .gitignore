@@ -221,3 +221,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local research data, model weights and private runtime artifacts
+/data/raw/
+/data/interim/
+/data/processed/
+/data/manifests/
+/models/
+/mlruns/
+/mlartifacts/
+/runtime/
+/artifacts/private/
+.env
+.env.*
+!.env.example

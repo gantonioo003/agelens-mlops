@@ -1,0 +1,26 @@
+{
+  "task": "04",
+  "completed": true,
+  "files_verified": 23708,
+  "images_decoded_by_full_audit": 23708,
+  "manifest_files_verified": 7,
+  "selected": 15000,
+  "split_sizes": {
+    "train": 9001,
+    "test": 3000,
+    "val_select": 1500,
+    "val_calibration": 1499
+  },
+  "no_detected_hash_or_group_overlap": true,
+  "subject_exclusive_verified": false,
+  "notebook_code_cells_executed": 10,
+  "notebook_errors": 0,
+  "figure_files_and_embedded_outputs_match": 8,
+  "interpreted_figures": 8,
+  "unit_tests_passed": 27,
+  "trained": false,
+  "features_extracted": false,
+  "commit_created": false,
+  "push_executed": false,
+  "next_task": "05_frozen_FaRL_features"
+}

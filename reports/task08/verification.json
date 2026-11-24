@@ -1,0 +1,56 @@
+{
+  "task": "08",
+  "completed": true,
+  "campaign": "task08-r4-v1",
+  "experiment_id": "1",
+  "seeds": [
+    17,
+    42,
+    2026
+  ],
+  "thresholds": [
+    12,
+    15,
+    18,
+    21
+  ],
+  "checkpoints_verified": 6,
+  "paired_runs": [
+    {
+      "seed": 17,
+      "r0": "c078af7a337b4d8b9ef99ce2f996eb63",
+      "r4": "e38f44062c64419fba3e5b3dbf49bfe2",
+      "best_epoch": 43,
+      "epochs_run": 53,
+      "paired_shared_initial_sha256": "e491b09aef1d5c9b01854f139ad0b7a791b3291f99fced04646b787a22fe8295",
+      "sampler_sha256": "d54aec95af887f5370e0d13c028e4982aed7c70028ad3a76b5780bf69abb5e0c"
+    },
+    {
+      "seed": 42,
+      "r0": "6d23b37765bc45bdb41e46720a93ccbd",
+      "r4": "939111cc30764967ac22423ae0fd537b",
+      "best_epoch": 28,
+      "epochs_run": 38,
+      "paired_shared_initial_sha256": "946415f362da867889da9ad434c451eb9d12945a3d7e3ff005e0520b1b6c9ec7",
+      "sampler_sha256": "9bbae8764cd8c763fce47ae32efa82d3b4165bbac576a99db07f141498005dd2"
+    },
+    {
+      "seed": 2026,
+      "r0": "02496a5aa6f446b8ba60fdcb82c24100",
+      "r4": "e7109f60699b4a3f8590cc8371d6883d",
+      "best_epoch": 39,
+      "epochs_run": 49,
+      "paired_shared_initial_sha256": "de0d77db50acfe37043b73e234e81b1e1f855941547a6315b8cf06bde2bb10fa",
+      "sampler_sha256": "c434eee872855ce32a276e46875422aa4511d45269228768acac0ef76d89d609"
+    }
+  ],
+  "cache_fingerprint": "d7ace2ec615fb9275113baae10414c1d66ad71793b7e116c8e8c1259fd329b72",
+  "protocol_sha256": "2b2b40dcaafad1b17f5dccc521a2718ccff0c97b799109b4967a1c5e464ea437",
+  "code_sha256": "76172c7ee88ab2e8a8b98f91a589f06b673cb8b22d0d79d7b4c90a1b235e3753",
+  "shared_initialization_and_sampler_verified": true,
+  "test_rows_materialized": 0,
+  "calibration_rows_materialized": 0,
+  "r0_retrained": false,
+  "backbone_trained": false,
+  "evaluation_partition": "val_select"
+}

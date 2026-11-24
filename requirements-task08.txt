@@ -1,0 +1,3 @@
+# Additional dependencies for the task 05 CUDA environment.
+mlflow-skinny==3.18.0
+matplotlib==3.11.2

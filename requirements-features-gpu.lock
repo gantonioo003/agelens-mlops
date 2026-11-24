@@ -1,0 +1,37 @@
+# Generated from the validated Windows Python 3.12 CUDA feature environment.
+# Official wheel hashes and CLIP source revision are pinned; no local paths.
+clip @ https://github.com/openai/CLIP/archive/d05afc436d78f1c48dc0dbf8e5980a9d471f35f6.zip
+cloudpickle==3.1.3
+colorama==0.4.6
+filelock==4.3.1
+fsspec==2026.9.0
+ftfy==6.3.1
+iniconfig==2.3.1
+jinja2==3.1.6
+joblib==1.6.0
+markupsafe==3.0.4
+mpmath==1.3.0
+narwhals==2.29.0
+networkx==3.7
+numpy==2.5.5
+packaging==26.3
+pandas==3.1.1
+pillow==13.0.0
+pluggy==1.7.0
+pygments==2.21.0
+pytest==9.2.0
+python-dateutil==4.0.0
+regex==2026.11.19
+ruff==0.17.6
+scikit-learn==1.9.1
+scipy==1.18.1
+setuptools==84.2.1
+six==1.17.0
+sympy==1.14.0
+threadpoolctl==3.8.0
+torch @ https://download.pytorch.org/whl/cu128/torch-2.8.0%2Bcu128-cp312-cp312-win_amd64.whl#sha256=0ad925202387f4e7314302a1b4f8860fa824357f9b1466d7992bf276370ebcff
+torchvision @ https://download.pytorch.org/whl/cu128/torchvision-0.23.0%2Bcu128-cp312-cp312-win_amd64.whl#sha256=20fa9c7362a006776630b00b8a01919fedcf504a202b81358d32c5aef39956fe
+tqdm==4.70.1
+typing-extensions==4.16.0
+tzdata==2026.6
+wcwidth==0.9.5

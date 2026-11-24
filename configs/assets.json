@@ -1,0 +1,24 @@
+{
+  "dataset": {
+    "name": "UTKFace-Cropped",
+    "source_kind": "third_party_mirror_not_original_distribution",
+    "source_page": "https://huggingface.co/datasets/py97/UTKFace-Cropped",
+    "revision": "e80f21fb21fa3631380c3cb634b79be3ac2f4cba",
+    "url": "https://huggingface.co/datasets/py97/UTKFace-Cropped/resolve/e80f21fb21fa3631380c3cb634b79be3ac2f4cba/UTKFace.tar.gz?download=true",
+    "path": "data/raw/UTKFace.tar.gz",
+    "size": 106634631,
+    "sha256": "2c0655397b498e81b82d685ee74bee8c2e4364a5897caf3afec6ea48929024a7",
+    "terms": "Original UTKFace non-commercial research conditions retained; mirror MIT tag does not replace original image rights.",
+    "original_source": "https://susanqq.github.io/UTKFace/"
+  },
+  "backbone": {
+    "name": "FaRL-Base-Patch16-LAIONFace20M-ep16",
+    "source_kind": "official_release",
+    "source_page": "https://github.com/FacePerceiver/FaRL/releases/tag/pretrained_weights",
+    "url": "https://github.com/FacePerceiver/FaRL/releases/download/pretrained_weights/FaRL-Base-Patch16-LAIONFace20M-ep16.pth",
+    "path": "models/FaRL-Base-Patch16-LAIONFace20M-ep16.pth",
+    "size": 652165542,
+    "sha256": "67b4d6bcad0cd4bdaa302741e05e92eb82ecb334ef92446555b3abd3e3cd3862",
+    "terms": "Use for academic experiments; do not redistribute checkpoint or assume rights to pretraining images."
+  }
+}

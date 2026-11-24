@@ -1,0 +1,10 @@
+# Official Windows CPython 3.12 CUDA 12.8 wheels; independent of the CPU environment.
+torch @ https://download.pytorch.org/whl/cu128/torch-2.8.0%2Bcu128-cp312-cp312-win_amd64.whl#sha256=0ad925202387f4e7314302a1b4f8860fa824357f9b1466d7992bf276370ebcff
+torchvision @ https://download.pytorch.org/whl/cu128/torchvision-0.23.0%2Bcu128-cp312-cp312-win_amd64.whl#sha256=20fa9c7362a006776630b00b8a01919fedcf504a202b81358d32c5aef39956fe
+numpy==2.5.5
+pandas==3.1.1
+Pillow==13.0.0
+scikit-learn==1.9.1
+pytest==9.2.0
+ruff==0.17.6
+clip @ https://github.com/openai/CLIP/archive/d05afc436d78f1c48dc0dbf8e5980a9d471f35f6.zip

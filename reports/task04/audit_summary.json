@@ -1,0 +1,167 @@
+{
+  "audit_id": "agelens-audit-v1",
+  "raw_archive_sha256": "2c0655397b498e81b82d685ee74bee8c2e4364a5897caf3afec6ea48929024a7",
+  "files_audited": 23708,
+  "images_decoded": 23708,
+  "valid_filename_labels": 23703,
+  "eligible_before_cap": 23036,
+  "selected": 15000,
+  "exclusion_counts": {
+    "selected": 15000,
+    "outside_sample_cap": 8036,
+    "conflicting_exact_duplicate_labels": 531,
+    "exact_pixel_duplicate": 118,
+    "outside_age_scope": 18,
+    "invalid_label": 5
+  },
+  "duplicates": {
+    "exact_pixel_duplicate_groups": 375,
+    "conflicting_exact_label_groups": 259,
+    "near_candidate_comparisons": 24788,
+    "near_edges": 584,
+    "largest_conservative_group": 5
+  },
+  "byte_duplicate_groups": 375,
+  "audit_policy_sha256": "db01b67e4ea2553fd9b5772141843d1818a259514bc9fedd51078523b817048f",
+  "audit_code_sha256": "4a3320d74ce8280dcf643de38e7391e2c3455515f9bebb643c3cfa8290177bb2",
+  "reference": {
+    "revision": "9be639bcd979c93db0e9c78002db78eb3f9167ab",
+    "sha256": "c82991d60771f6fcbf8cf6fb7faab931e782832586951dbe0cb4254ab6c8f8c9",
+    "eligible_matches": 23035,
+    "eligible_total": 23036,
+    "cross_partition_similarity_groups": 256,
+    "used": false
+  },
+  "split_method": "registered_grouped_stratified_fallback",
+  "split_sizes": {
+    "train": 9001,
+    "test": 3000,
+    "val_select": 1500,
+    "val_calibration": 1499
+  },
+  "support": {
+    "12": {
+      "test": {
+        "minor": 420,
+        "adult": 2580
+      },
+      "train": {
+        "minor": 1263,
+        "adult": 7738
+      },
+      "val_calibration": {
+        "minor": 211,
+        "adult": 1288
+      },
+      "val_select": {
+        "minor": 212,
+        "adult": 1288
+      }
+    },
+    "13": {
+      "test": {
+        "minor": 436,
+        "adult": 2564
+      },
+      "train": {
+        "minor": 1314,
+        "adult": 7687
+      },
+      "val_calibration": {
+        "minor": 219,
+        "adult": 1280
+      },
+      "val_select": {
+        "minor": 220,
+        "adult": 1280
+      }
+    },
+    "15": {
+      "test": {
+        "minor": 466,
+        "adult": 2534
+      },
+      "train": {
+        "minor": 1402,
+        "adult": 7599
+      },
+      "val_calibration": {
+        "minor": 234,
+        "adult": 1265
+      },
+      "val_select": {
+        "minor": 234,
+        "adult": 1266
+      }
+    },
+    "16": {
+      "test": {
+        "minor": 487,
+        "adult": 2513
+      },
+      "train": {
+        "minor": 1468,
+        "adult": 7533
+      },
+      "val_calibration": {
+        "minor": 245,
+        "adult": 1254
+      },
+      "val_select": {
+        "minor": 245,
+        "adult": 1255
+      }
+    },
+    "18": {
+      "test": {
+        "minor": 538,
+        "adult": 2462
+      },
+      "train": {
+        "minor": 1620,
+        "adult": 7381
+      },
+      "val_calibration": {
+        "minor": 270,
+        "adult": 1229
+      },
+      "val_select": {
+        "minor": 270,
+        "adult": 1230
+      }
+    },
+    "21": {
+      "test": {
+        "minor": 621,
+        "adult": 2379
+      },
+      "train": {
+        "minor": 1868,
+        "adult": 7133
+      },
+      "val_calibration": {
+        "minor": 311,
+        "adult": 1188
+      },
+      "val_select": {
+        "minor": 311,
+        "adult": 1189
+      }
+    }
+  },
+  "manifest_sha256": {
+    "audit.csv": "a34def84c239fe928e27f86b48739ec94a0abae3f27b625874cb8dc5fe4d2687",
+    "near_duplicate_pairs.csv": "76cb695a7e6356625d47e5f2f8190d77e8b7309e5aa274b4fc20703d68b3ed2e",
+    "selected.csv": "3d4af8090b87f9e6d02183d861e6e9bb9f71544d49bc0f8ce1ada942d0775f72",
+    "test.csv": "c0d531bc59cb8c3aea36f62bf6b979bbdf93b221a607aa8bca2e6523c296a817",
+    "train.csv": "a97eebba9f05db77661b4b06a22d014f1681aa1bb12cd8181f54e900bc402592",
+    "val_calibration.csv": "3802079664b72d697e9fef8e66b9dd3a52df12d0c8bf0a2cb606a82125f50c5b",
+    "val_select.csv": "46aaea53ae1e9482baccab59cfc739469111a0a7a2ccf51eb5b88223c6ff9de9"
+  },
+  "subject_exclusive_verified": false,
+  "trained": false,
+  "archive_inventory_verified": true,
+  "full_technical_image_audit_done": true,
+  "invariants_passed": true,
+  "near_duplicate_identity_verified": false
+}

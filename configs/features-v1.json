@@ -1,0 +1,18 @@
+{
+  "feature_id": "farl-ep16-frozen-v1",
+  "backbone": "FaRL-Base-Patch16-LAIONFace20M-ep16",
+  "input_resolution": 224,
+  "output_dimensions": 512,
+  "dtype": "float32",
+  "normalization": "per_row_L2_no_fitted_statistics",
+  "preprocess": "EXIF_transpose_RGB_then_pinned_official_CLIP_transform",
+  "augmentation": "none",
+  "encoder_mode": "eval_inference_mode_requires_grad_false",
+  "device": "cuda",
+  "batch_size": 4,
+  "torch_threads": 4,
+  "preprocessing_threads": 2,
+  "checkpoint_rows": 128,
+  "seed": 42,
+  "trained": false
+}

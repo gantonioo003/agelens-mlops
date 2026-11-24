@@ -1,0 +1,14 @@
+.git
+.venv
+.env
+.env.*
+data
+models
+artifacts
+runtime
+mlruns
+mlartifacts
+docs
+tests
+__pycache__
+*.pyc

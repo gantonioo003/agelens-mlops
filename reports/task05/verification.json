@@ -1,0 +1,73 @@
+{
+  "task": "05",
+  "completed": true,
+  "samples": 15000,
+  "feature_shape": [
+    15000,
+    512
+  ],
+  "dtype": "float32",
+  "finite": true,
+  "l2_normalized": true,
+  "row_alignment_verified": true,
+  "all_selected_image_hashes_verified": true,
+  "all_cache_file_hashes_verified": true,
+  "independent_recomputed_rows": 16,
+  "recomputation_max_absolute_error": 2.4586915969848633e-07,
+  "recomputation_tolerance": {
+    "atol": 2e-06,
+    "rtol": 1e-05
+  },
+  "single_image_repeats_bitwise_equal": true,
+  "checkpoint_precision_preserved": true,
+  "extraction_device": "cuda",
+  "cpu_crosscheck_rows": 4,
+  "cpu_crosscheck_max_absolute_error": 3.688037395477295e-07,
+  "encoder_state_unchanged": true,
+  "encoder_state_sha256": "c4d4cadb731fecd105c5db3a21bef42d05057bf6c9280943fe49a65756153872",
+  "eval_mode": true,
+  "all_parameters_frozen": true,
+  "gradients_absent": true,
+  "fitted_transforms": false,
+  "partitions": {
+    "train": {
+      "rows": 9001,
+      "features": 512,
+      "cv_folds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "val_select": {
+      "rows": 1500,
+      "features": 512,
+      "cv_folds": [
+        -1
+      ]
+    },
+    "val_calibration": {
+      "rows": 1499,
+      "features": 512,
+      "cv_folds": [
+        -1
+      ]
+    },
+    "test": {
+      "rows": 3000,
+      "features": 512,
+      "cv_folds": [
+        -1
+      ]
+    }
+  },
+  "cache_id": "d7ace2ec615fb9275113baae10414c1d",
+  "cache_metadata_sha256": "3807871558919e5f0824776bdde9a907176980626c68c47348dab805f5c9e73c",
+  "cache_fingerprint": "d7ace2ec615fb9275113baae10414c1d66ad71793b7e116c8e8c1259fd329b72",
+  "unit_tests_passed": 50,
+  "trained": false,
+  "age_predictions_generated": false,
+  "commit_created": false,
+  "push_executed": false,
+  "next_task": "06_MLflow_tracking_setup_before_model_training"
+}

@@ -1,0 +1,5 @@
+{
+  "tracking_uri": "http://127.0.0.1:15000",
+  "research_experiment": "agelens-research-v1",
+  "smoke_experiment": "agelens-infra-smoke"
+}

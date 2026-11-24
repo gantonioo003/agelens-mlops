@@ -1,0 +1,23 @@
+{
+  "audit_id": "agelens-audit-v1",
+  "registered_on": "2026-11-23",
+  "scope": "technical_image_and_metadata_audit_not_documentary_age_or_identity_verification",
+  "reference_revision": "9be639bcd979c93db0e9c78002db78eb3f9167ab",
+  "reference_url": "https://raw.githubusercontent.com/paplhjak/Facial-Age-Estimation-Benchmark-Databases/9be639bcd979c93db0e9c78002db78eb3f9167ab/UTKFace_aligned.json",
+  "exact_duplicate_policy": "exclude_conflicting_label_groups_otherwise_keep_lexicographic_representative",
+  "near_duplicates": {
+    "method": "64_bit_difference_hash_then_16x16_RGB_MAE_with_horizontal_flip",
+    "max_hamming": 4,
+    "max_rgb_mae_0_to_1": 0.02,
+    "min_gray_std_0_to_255": 8,
+    "action": "group_for_partitioning_only_not_identity_or_automatic_removal"
+  },
+  "reference_policy": "use_only_if_all_eligible_records_map_with_consistent_age_folder_and_all_duplicate_groups_have_one_base_split",
+  "fallback": "deterministic_StratifiedGroupKFold_5_splits_seed_42; folds_0_1_2_train_3_validation_4_test",
+  "cap_policy": "whole_groups_with_proportional_base_split_and_stratum_quotas_then_largest_deficit_fill; total_at_most_15000",
+  "validation_partition": "StratifiedGroupKFold_2_splits_seed_42; select_fold_0_calibration_fold_1",
+  "cv": "StratifiedGroupKFold_3_splits_on_train_only_seed_42",
+  "eda_partition": "train_only_except_technical_quality_checks_and_split_support_counts",
+  "no_quality_based_exclusion": true,
+  "trained": false
+}

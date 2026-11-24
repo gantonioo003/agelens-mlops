@@ -1,0 +1,12 @@
+numpy>=2.2,<3
+pandas>=2.2,<4
+scikit-learn>=1.7,<2
+matplotlib>=3.9,<4
+Pillow>=11,<14
+torch==2.8.0
+torchvision==0.23.0
+mlflow>=3.1,<4
+jupyterlab>=4.4,<5
+pytest>=8,<10
+ruff>=0.12,<1
+clip @ https://github.com/openai/CLIP/archive/d05afc436d78f1c48dc0dbf8e5980a9d471f35f6.zip

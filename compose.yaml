@@ -1,0 +1,55 @@
+name: agelens
+services:
+  broker:
+    image: eclipse-mosquitto:2@sha256:fa12172a051310efe5bcb7a6a11b77bd5faacb82cbacd7742aa758bf024fd8e4
+    ports:
+      - "127.0.0.1:18883:1883"
+    volumes:
+      - ./infra/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mqtt_data:/mosquitto/data
+    healthcheck:
+      test: ["CMD", "mosquitto_pub", "-h", "localhost", "-t", "agelens/health", "-m", "ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  database:
+    image: postgres:16-alpine@sha256:f2f98726820d0342055351c6e9d36e705f5bfffb3dd53ff556325114b08afb6d
+    environment:
+      POSTGRES_DB: agelens
+      POSTGRES_USER: agelens
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Create .env from .env.example and set POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agelens -d agelens"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  mlflow:
+    build: .
+    command: ["mlflow", "server", "--host", "0.0.0.0", "--port", "5000", "--backend-store-uri", "sqlite:////state/mlflow.db", "--serve-artifacts", "--artifacts-destination", "/state/artifacts"]
+    environment:
+      MLFLOW_DISABLE_TELEMETRY: "true"
+    ports:
+      - "127.0.0.1:15000:5000"
+    volumes:
+      - mlflow_data:/state
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+  workspace-check:
+    build: .
+    profiles: ["check"]
+    depends_on:
+      broker:
+        condition: service_healthy
+      database:
+        condition: service_healthy
+      mlflow:
+        condition: service_healthy
+volumes:
+  mqtt_data:
+  postgres_data:
+  mlflow_data:

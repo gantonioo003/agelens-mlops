@@ -1,0 +1,34 @@
+{
+  "task": "06",
+  "tracking_uri": "http://127.0.0.1:15000",
+  "server_version": "3.18.0",
+  "client_version": "3.18.0",
+  "smoke_experiment": "agelens-infra-smoke",
+  "smoke_experiment_id": "2",
+  "research_experiment": "agelens-research-v1",
+  "research_experiment_id": "1",
+  "run_ids": {
+    "FINISHED": "a19be7b0b15e4761bd988959367cafed",
+    "FAILED": "2f7472a76b624746aa40a05fa9141535"
+  },
+  "synthetic_metric_history": [
+    [
+      0,
+      1.0
+    ],
+    [
+      1,
+      2.0
+    ]
+  ],
+  "cache_fingerprint": "d7ace2ec615fb9275113baae10414c1d66ad71793b7e116c8e8c1259fd329b72",
+  "protocol_sha256": "2b2b40dcaafad1b17f5dccc521a2718ccff0c97b799109b4967a1c5e464ea437",
+  "code_sha256": "2c135fc5cbab0599dfbffad75314dc35a1e1c529d85c5e9c75650fe74f5e4a56",
+  "provenance_artifact_sha256": "c5f8a6155ce20f9c18528ac11f1962b76009da3d800598ec747def5e6fec89ed",
+  "parameters_tags_metrics_artifacts_verified": true,
+  "tracking_ui_http_verified": true,
+  "read_only_recheck_passed": true,
+  "trained": false,
+  "personal_data_uploaded": false,
+  "research_experiment_empty": true
+}
