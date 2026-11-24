@@ -1,0 +1,25 @@
+{
+  "task": "10",
+  "completed": true,
+  "verified_at_utc": "2026-11-24T15:14:43.761304+00:00",
+  "synthetic_only": true,
+  "event_ids": [
+    "5fd28da8-a3cf-44a5-ab1f-7589f664f601",
+    "766f40a2-1866-472e-8554-ba5d921faef6",
+    "8d4349f0-8a39-40a9-b5dc-b51736f31338"
+  ],
+  "image_sha256": "2fa775a4ade5cf2d9cdf592072a2f3c327142c8e83c9ec2600e0a7936b0150f9",
+  "mqtt_qos": 1,
+  "postgres_status": "pending",
+  "exact_bytes_readback": true,
+  "duplicate_ignored": true,
+  "rejections_verified": [
+    "event_id_conflict",
+    "image_checksum_mismatch",
+    "invalid_contract"
+  ],
+  "offline_delivery_verified": true,
+  "broker_restart_recovery_verified": true,
+  "test_used": false,
+  "calibration_used": false
+}

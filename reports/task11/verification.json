@@ -1,0 +1,30 @@
+{
+  "task": "11",
+  "completed": true,
+  "origin": "http://127.0.0.1:18080",
+  "model": {
+    "version": "agelens-r0-v1",
+    "variant": "R0",
+    "seed": 42,
+    "mlflow_run_id": "6d23b37765bc45bdb41e46720a93ccbd",
+    "checkpoint_sha256": "5ea0a17666bf137f4241dfb381c95c77dd5b263ea47d1307f0041a406d947cf2",
+    "backbone_sha256": "67b4d6bcad0cd4bdaa302741e05e92eb82ecb334ef92446555b3abd3e3cd3862",
+    "score_direction": "negative_predicted_age",
+    "notice": "Experimental estimate; not age verification or access control."
+  },
+  "synthetic_fixture_only": true,
+  "offline_http_age_abs_error_years": 0.0,
+  "threshold_decisions_equal": true,
+  "result_lookup_verified": true,
+  "rejected_status_codes": {
+    "wrong_type": 415,
+    "corrupt_png": 422,
+    "wrong_signature": 422,
+    "oversized": 413
+  },
+  "health_after_rejections": true,
+  "api_duration_ms": 559.233,
+  "test_used": false,
+  "selection_sha256": "30915d8e339cf4aa76a85dc5a7038d1ebcd57eaa08b3e11c85ed89bbe7268a02",
+  "calibration_sha256": "f299889d1a9449cdecbd020c6fc2cb63694c168e1ae95008d2e78bc2e34cb983"
+}

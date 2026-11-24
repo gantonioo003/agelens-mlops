@@ -39,6 +39,75 @@ services:
       interval: 10s
       timeout: 5s
       retries: 20
+  ingestion:
+    image: agelens-ingestion:local
+    build:
+      context: .
+      dockerfile: Dockerfile.ingest
+    restart: unless-stopped
+    environment:
+      MQTT_HOST: broker
+      PGHOST: database
+      PGDATABASE: agelens
+      PGUSER: agelens
+      PGPASSWORD: ${POSTGRES_PASSWORD:?Create .env from .env.example and set POSTGRES_PASSWORD}
+    volumes:
+      - ./runtime/ingest/inbox:/inbox:ro
+    depends_on:
+      broker:
+        condition: service_healthy
+      database:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "test", "-f", "/tmp/agelens-ingestion-ready"]
+      interval: 3s
+      timeout: 2s
+      retries: 20
+  simulator:
+    image: agelens-ingestion:local
+    profiles: ["simulation"]
+    command: ["python", "-m", "services.ingest.simulator", "--help"]
+    environment:
+      MQTT_HOST: broker
+    volumes:
+      - ./runtime/ingest/inbox:/inbox:ro
+    depends_on:
+      ingestion:
+        condition: service_healthy
+  airflow:
+    profiles: ["orchestration"]
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    command: ["standalone"]
+    environment:
+      AIRFLOW__CORE__DAGS_FOLDER: /agelens/airflow_dags
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+      AIRFLOW__CORE__PARALLELISM: "4"
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: agelens:admin
+      AIRFLOW__API__WORKERS: "1"
+      AIRFLOW__DAG_PROCESSOR__PARSING_PROCESSES: "1"
+      AGELENS_INFERENCE_URL: http://host.docker.internal:${AGELENS_API_PORT:-18080}
+      PGHOST: database
+      PGDATABASE: agelens
+      PGUSER: agelens
+      PGPASSWORD: ${POSTGRES_PASSWORD:?Create .env from .env.example and set POSTGRES_PASSWORD}
+    ports:
+      - "127.0.0.1:18090:8080"
+    volumes:
+      - airflow_home:/opt/airflow
+      - ./configs/protocol-v1.json:/agelens/inputs/protocol.json:ro
+      - ./data/manifests/train.csv:/agelens/inputs/train.csv:ro
+      - ./data/processed/farl_ep16:/agelens/cache:ro
+    depends_on:
+      ingestion:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/api/v2/monitor/health', timeout=3)"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
   workspace-check:
     build: .
     profiles: ["check"]
@@ -53,3 +122,4 @@ volumes:
   mqtt_data:
   postgres_data:
   mlflow_data:
+  airflow_home:

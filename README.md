@@ -1,7 +1,7 @@
 # agelens-mlops
 Projeto acadêmico de estimativa de idade e identificação de menores em imagens, utilizando FaRL, MLP e um pipeline integrado de MLOps com MLflow, MQTT, Airflow, API, dashboard e Docker.
 
-## Etapas 01 a 08
+## Etapas 01 a 12
 
 - [Task 01: escopo e decisoes](docs/task-01-escopo.md)
 - [Task 02: dados, licencas e protocolo experimental](docs/task-02-dados-e-protocolo.md)
@@ -18,6 +18,14 @@ Projeto acadêmico de estimativa de idade e identificação de menores em imagen
 - [Comprovante da task 07](reports/task07/verification.json)
 - [Task 08: comparacao pareada R0 x R4](docs/task-08-r0-r4.md)
 - [Comprovante da task 08](reports/task08/verification.json)
+- [Task 09: contribuicao e comparacao R4 x R6](docs/task-09-r4-r6.md)
+- [Comprovante da task 09](reports/task09/verification.json)
+- [Task 10: simulador, MQTT e PostgreSQL](docs/task-10-ingestao.md)
+- [Comprovante da task 10](reports/task10/verification.json)
+- [Task 11: API de inferencia e recarga do modelo](docs/task-11-api.md)
+- [Comprovante da task 11](reports/task11/verification.json)
+- [Task 12: Airflow, inferencia agendada e dados rotulados](docs/task-12-airflow.md)
+- [Comprovante da task 12](reports/task12/verification.json)
 - [Fontes, condicoes de uso e procedencia dos dados](docs/data-sources.md)
 - [Protocolo estruturado](configs/protocol-v1.json)
 
@@ -32,6 +40,8 @@ A task 06 configurou o tracking local com persistencia e verificou parametros, t
 A task 07 comparou mediana, KNN, Random Forest e MLP R0 com 19 runs de validacao cruzada e 12 ajustes finais no MLflow. O MLP teve o menor MAE em val_select: 4,65 anos (DP 0,05, tres sementes). O backbone FaRL nao foi treinado; teste e calibracao seguem reservados.
 
 A task 08 comparou o R0 preservado com o R4 nas mesmas tres sementes. Em val_select, o MAE geral ficou praticamente igual; o F2 provisorio nos limiares de 18 e 21 anos caiu com R4. Os runs, checkpoints e o resumo pareado foram conferidos no MLflow. Teste e calibracao seguem reservados.
+
+A task 09 avaliou a contribuicao R6 com duas novas cabecas. Em val_select, a media de F2 abaixo de 13 e de 16 anos caiu de 0,9420 (R4) para 0,9324 (R6), com delta negativo nas tres sementes. A comparacao foi conferida no MLflow; teste e calibracao continuam reservados.
 
 ## Reproduzir a task 04
 
@@ -72,6 +82,6 @@ Para verificar o ambiente e os servicos:
 docker compose --profile check run --rm workspace-check
 ```
 
-O lock Windows documenta o ambiente cientifico local; a imagem Docker inicial usa dependencias Linux proprias e nao inclui dados nem pesos. O Compose desta etapa entrega somente a infraestrutura inicial: broker, banco e MLflow. Simulador, Airflow, API de inferencia, dashboard e integracao final ainda serao implementados nas etapas correspondentes.
+O lock Windows documenta o ambiente cientifico local; as imagens Docker usam dependencias Linux proprias e nao incluem dados nem pesos. O Compose inclui broker, banco, MLflow e o consumidor de ingestao. O simulador sob demanda publica referencias de imagens pelo MQTT; o consumidor valida e grava os bytes e o estado pendente no PostgreSQL. A API local recarrega o R0 pelo MLflow. O perfil opcional de orquestracao executa o Airflow: o DAG operacional chama a API e persiste o resultado, e o DAG de treino prepara um snapshot privado apenas com os rotulos auditados. O dashboard fica para a etapa seguinte.
 
 As portas estao restritas a localhost. A configuracao nao e adequada para publicacao na Internet sem autenticacao e TLS. Para parar sem apagar dados: `docker compose stop`.
